@@ -9,7 +9,7 @@ var _           =   require('lodash'),
 
 /**
  * Fetches the user name
- * 
+ *
  * @param   {Object}    users               A map of harvest id -> slack id
  * @param   {Number}    harvestUserId
  * @returns {String}
@@ -28,9 +28,9 @@ function getUserName (users, harvestUserId)
 
 /**
  * Sends notifications via slack
- * 
+ *
  * @author      Maciej Garycki <maciej@neverbland.com>
- * 
+ *
  * @param       {Object}    slack       The slack object
  * @param       {Object}    harvest     The harvest object
  * @constructor
@@ -41,14 +41,14 @@ function SlackReminder (slack, harvest)
     this.harvest = harvest;
 }
 
-function SlackReminderPrototype () 
+function SlackReminderPrototype ()
 {
-    this.LINK = "https://neverbland.harvestapp.com/time";
-    
-    
+    this.LINK = "https://soxhub1.harvestapp.com/time";
+
+
     /**
      * Sends notification to slack
-     * 
+     *
      * @param   {Object}        slackContext
      * @returns {undefined}
      */
@@ -56,14 +56,14 @@ function SlackReminderPrototype ()
     {
         var userName = getUserName(this.slack.users, slackContext.harvestUserId);
         this.prepareText(userName);
-        
+
     };
-    
-    
-    
+
+
+
     /**
      * prepares the text and triggers propper event when ready
-     * 
+     *
      * @param       {String}        userName
      * @returns     {undefined}
      */
